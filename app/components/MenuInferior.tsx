@@ -78,7 +78,7 @@ function BotaoMenu(props: {
     >
       <Ionicons
         name={props.icone}
-        size={28}
+        size={24}
         color={corIcone}
         style={styles.iconShadow}
       />
@@ -94,12 +94,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     justifyContent: "space-between",
     alignItems: "center",
-    borderRadius: 18,
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    margin: 3,
+    borderRadius: 18
   },
   centerButton: {
     width: 75,
@@ -112,11 +107,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: "50%",
     left: "50%",
-    transform: [{ translateX: -13 }, { translateY: -17 }],
+    transform: [{ translateX: -13.5 }, { translateY: -16 }],
   },
   iconShadow: {
     textShadowColor: "#fff",
-    //textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 3  
   },
 });

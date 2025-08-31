@@ -1,12 +1,12 @@
 import { useFonts } from 'expo-font';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 import 'react-native-reanimated';
-
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import App from './components/App';
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Inter: require('../assets/fonts/Inter-VariableFont.ttf'),
   });
 
   if (!loaded) {
@@ -14,9 +14,12 @@ export default function RootLayout() {
   }
 
   return (
-    <View style={styles.container}>
-      <App></App>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+        <StatusBar hidden />
+        <App />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

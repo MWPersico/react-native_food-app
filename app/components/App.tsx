@@ -1,16 +1,12 @@
-import React, { ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import CabecalhoHome from './CabecalhoHome';
 import MenuInferior from './MenuInferior';
 
-type AppProps = {
-  children?: ReactNode
-};
-
-export default function App({children}: AppProps){
-
+export default function App(){
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo ao Foodi App</Text>
+      <CabecalhoHome />
       <MenuInferior />
     </View>
   );
@@ -20,15 +16,15 @@ export default function App({children}: AppProps){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection:"column",
+    justifyContent:"space-between",
     backgroundColor: '#FFF',
-    padding:5,
-    paddingTop: 48,
-    paddingHorizontal: 16,
-    justifyContent: 'flex-start',
+    padding:8,
+    paddingTop: 20,
     boxSizing:'border-box',
     borderColor:'#FFE397',
     borderWidth:15,
-    borderRadius:30
+    borderRadius:35
   },
   title: {
     fontSize: 24,
