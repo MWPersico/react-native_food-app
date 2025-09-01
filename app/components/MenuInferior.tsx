@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleProp, StyleSheet, TouchableOpacity, View, ViewStyle } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 const menuButtons = [
@@ -62,10 +62,11 @@ export default function MenuInferior() {
   );
 }
 
-function BotaoMenu(props: {
+export function BotaoMenu(props: {
   icone: any;
   ativo?: boolean;
   onPress?: () => void;
+  estilo?:StyleProp<ViewStyle>;
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const corIcone = props.ativo ? "#FAC22D" : isHovered ? "#FAC22D" : "#14181B";
@@ -75,6 +76,7 @@ function BotaoMenu(props: {
       onPress={props.onPress}
       onPressIn={() => setIsHovered(true)}
       onPressOut={() => setIsHovered(false)}
+      style={props.estilo}
     >
       <Ionicons
         name={props.icone}

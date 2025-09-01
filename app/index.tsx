@@ -15,7 +15,7 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+      <SafeAreaView style={styles.container} edges={['bottom']}>
         <StatusBar hidden />
         <App />
       </SafeAreaView>
